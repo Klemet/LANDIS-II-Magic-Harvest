@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Klemet/LANDIS-II-Magic-Harvest/master/screenshots/logoMagicHarvest.svg" />
+  <img src="https://raw.githubusercontent.com/Klemet/LANDIS-II-Magic-Harvest/main/screenshots/logoMagicHarvest.svg" />
 </p>
 <h1 align="center">Magic Harvest</h1>
 
@@ -57,7 +57,7 @@ The extension only requires two parameters :
 
 # 🎮 Example and testing
 
-If you want to experiment with the extension or test it, you can [download the example files](https://downgit.github.io/#/home?url=https://github.com/Klemet/LANDIS-II-Magic-Harvest/tree/master/Examples).
+If you want to experiment with the extension or test it, you can [download the example files](https://downgit.github.io/#/home?url=https://github.com/Klemet/LANDIS-II-Magic-Harvest/tree/main/Examples).
 
 To launch the example scenario, you'll need the [Age-Only succession](http://www.landis-ii.org/extensions/age-only-succession) extension and the [Base Harvest](http://www.landis-ii.org/extensions/base-harvest) extension installed on your computer, in addition to Magic Harvest. Just launch the `test_scenario.bat` file, and the example scenario should run.
 
