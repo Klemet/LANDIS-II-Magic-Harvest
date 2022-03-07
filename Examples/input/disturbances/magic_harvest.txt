@@ -1,0 +1,7 @@
+LandisData "Magic Harvest"
+
+Timestep 70
+
+HarvestExtensionParameterFile ./input/disturbances/harvest.txt
+
+PythonScriptLocation ./switchManagementRasterNames.py

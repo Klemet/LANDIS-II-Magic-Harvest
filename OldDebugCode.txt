@@ -1,0 +1,89 @@
+// We empty the list of stands associated with the management area.
+// If we don't do this, then stands that should not be in a management area anymore could still be into it
+// after we re-initialize the management areas.
+// This is because stands are associated to management areas via a Add() function, but the list
+// in which they are put (ManagementArea.stands) is not "reset" during initialization.
+// See https://github.com/LANDIS-II-Foundation/Library-Harvest-Mgmt/blob/aec2572e341122ecd14a39cf2961dccbd3b6073c/src/Stands.cs#L69 for details.
+//if (HarvestMgmtLib.SiteVars.ManagementArea[site] != null)
+//{
+//    // We get the management area object if it exists for this site
+//    HarvestMgmtLib.ManagementArea managementAreaOfSite = HarvestMgmtLib.SiteVars.ManagementArea[site];
+//    // We get the list of stands associated with the management areas
+//    List<HarvestMgmtLib.Stand> listOfStandsInManagementArea = (List<HarvestMgmtLib.Stand>)managementAreaOfSite.GetType().GetField("stands", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(managementAreaOfSite);
+//    // We clear the list.
+//    modelCore.UI.WriteLine("REHARVEST : NUMBER OF STANDS IN MANAGEMENT AREA " + managementAreaOfSite.MapCode.ToString() + " : " + listOfStandsInManagementArea.Count().ToString());
+//    listOfStandsInManagementArea.Clear();
+//}
+
+// We remove any management areas linked to this site to re-initialize it later.
+
+// We reprint the stands after everything that happened.
+
+//modelCore.UI.WriteLine("REHARVEST : PRINTING MANAGEMENT AREA DIRECTLY ASSOCIATED TO THE STAND OF EACH PIXEL : ");
+//List<string> listOfManagementAreaPerStandPerPixel = new List<string>();
+//foreach (Site site in modelCore.Landscape.AllSites)
+//{
+//    if (HarvestMgmtLib.SiteVars.Stand[site] == null) { listOfManagementAreaPerStandPerPixel.Add("NOSTAND"); }
+//    else
+//    {
+//        if (HarvestMgmtLib.SiteVars.Stand[site].ManagementArea == null) { listOfManagementAreaPerStandPerPixel.Add("NOAREA"); }
+//        else { listOfManagementAreaPerStandPerPixel.Add(HarvestMgmtLib.SiteVars.Stand[site].ManagementArea.MapCode.ToString()); }
+//    }
+//}
+//modelCore.UI.WriteLine(string.Join(" ", listOfManagementAreaPerStandPerPixel));
+
+//modelCore.UI.WriteLine("REHARVEST : PRINTING PRESCRIPTIONS IN EACH PIXEL : ");
+//List<string> listOfPixelPrescriptions = new List<string>();
+//foreach (Site site in modelCore.Landscape.AllSites)
+//{
+//    if (HarvestMgmtLib.SiteVars.Prescription[site] == null) { listOfPixelPrescriptions.Add("NA"); }
+//    else
+//    {
+//        listOfPixelPrescriptions.Add(HarvestMgmtLib.SiteVars.Prescription[site].Number.ToString());
+//    }
+//}
+//modelCore.UI.WriteLine(string.Join(" ", listOfPixelPrescriptions));
+
+//foreach (HarvestMgmtLib.ManagementArea mgmtArea in managementAreasList2)
+//{
+//    List<HarvestMgmtLib.Stand> listOfStandsInManagementArea = (List<HarvestMgmtLib.Stand>)mgmtArea.GetType().GetField("stands", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(mgmtArea);
+//    modelCore.UI.WriteLine("REHARVEST : NUMBER OF STANDS IN MANAGEMENT AREA " + mgmtArea.MapCode.ToString() + " AFTER CLEARING : " + listOfStandsInManagementArea.Count().ToString());
+//    modelCore.UI.WriteLine("REHARVEST : LIST OF STANDS IN MANAGEMENT AREA " + mgmtArea.MapCode.ToString() + " AFTER CLEARING : ");
+//    // We take away this management area as an association to the stands
+//    foreach (HarvestMgmtLib.Stand stand in listOfStandsInManagementArea)
+//    {
+//        modelCore.UI.WriteLine(stand.MapCode.ToString());
+//    }
+//}
+
+//modelCore.UI.WriteLine("REHARVEST : PRINTING LIST MANAGEMENT AREAS ASSOCIATED TO PIXELS : ");
+//List<string> listOfManagementAreaPerPixel = new List<string>();
+//foreach (Site site in modelCore.Landscape.AllSites)
+//{
+//    if (HarvestMgmtLib.SiteVars.ManagementArea[site] == null) { listOfManagementAreaPerPixel.Add("NULL"); }
+//    else { listOfManagementAreaPerPixel.Add(HarvestMgmtLib.SiteVars.ManagementArea[site].MapCode.ToString()); }
+//}
+//modelCore.UI.WriteLine(string.Join(" ", listOfManagementAreaPerPixel));
+
+//modelCore.UI.WriteLine("REHARVEST : PRINTING LIST STANDS ASSOCIATED TO PIXELS : ");
+//List<string> listOfStandsPerPixel = new List<string>();
+//foreach (Site site in modelCore.Landscape.AllSites)
+//{
+//    if (HarvestMgmtLib.SiteVars.Stand[site] == null) { listOfStandsPerPixel.Add("NULL"); }
+//    else { listOfStandsPerPixel.Add(HarvestMgmtLib.SiteVars.Stand[site].MapCode.ToString()); }
+//}
+//modelCore.UI.WriteLine(string.Join(" ", listOfStandsPerPixel));
+
+//modelCore.UI.WriteLine("REHARVEST : PRINTING LIST OF STANDS ASSOCIATED TO MANAGEMENT AREAS : ");
+
+//foreach (HarvestMgmtLib.ManagementArea mgmtArea in managementAreasList2)
+//{
+//    modelCore.UI.WriteLine("REHARVEST : NUMBER OF STANDS IN MANAGEMENT AREA " + mgmtArea.MapCode.ToString() + " : ");
+//    List<HarvestMgmtLib.Stand> listOfStandsInManagementArea = (List<HarvestMgmtLib.Stand>)mgmtArea.GetType().GetField("stands", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(mgmtArea);
+//    List<string> listOfStandsPerManagementArea = new List<string>();
+//    foreach (HarvestMgmtLib.Stand stand in listOfStandsInManagementArea)
+//    {
+//        listOfStandsPerManagementArea.Add(stand.MapCode.ToString());
+//    }
+//    modelCore.UI.WriteLine(string.Join(" ", listOfStandsPerManagementArea));
+//}
