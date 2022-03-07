@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="186.08891mm"
-   height="212.60428mm"
-   viewBox="0 0 186.08891 212.60428"
+   width="194.9659mm"
+   height="222.74612mm"
+   viewBox="0 0 194.96589 222.74613"
    version="1.1"
    id="svg6177"
    inkscape:version="1.1 (c68e22c387, 2021-05-23)"
@@ -19,30 +19,40 @@
      bordercolor="#666666"
      borderopacity="1.0"
      inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="1"
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.56630543"
-     inkscape:cx="-434.39456"
-     inkscape:cy="46.794536"
-     inkscape:window-width="3377"
+     inkscape:zoom="1.1326109"
+     inkscape:cx="373.91483"
+     inkscape:cy="453.37725"
+     inkscape:window-width="3378"
      inkscape:window-height="1417"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
      fit-margin-top="0"
-     fit-margin-left="0"
+     fit-margin-left="0.5"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:snap-bbox="false"
+     inkscape:bbox-paths="false"
+     lock-margins="true" />
   <defs
      id="defs6174" />
   <g
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-17.550684,-9.6028725)">
+     transform="translate(-13.112192,-4.5319495)">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke-width:1.50513;stroke-linecap:round;stroke-linejoin:round"
+       id="rect1913"
+       width="194.9659"
+       height="222.74612"
+       x="13.112192"
+       y="4.5319495" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:14.1306px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.662373"
@@ -140,7 +150,7 @@
          x="36.564209"
          y="83.515167"
          id="tspan21984">according to <tspan
-   style="fill:#83c5be;fill-opacity:1;font-weight:bold"
+   style="font-weight:bold;fill:#83c5be;fill-opacity:1"
    id="tspan47798">parameters</tspan></tspan></text>
     <circle
        style="fill:#83c5be;fill-opacity:1;stroke-width:0.564999;stroke-linecap:round;stroke-linejoin:round"
@@ -154,7 +164,7 @@
        style="stroke-linecap:butt;stroke-linejoin:round">
       <polygon
          style="fill:#3b484a"
-         points="72.574,249.043 60.637,252.066 38.52,283.096 62.011,279.022 "
+         points="38.52,283.096 62.011,279.022 72.574,249.043 60.637,252.066 "
          id="polygon14235-0-8-3"
          transform="matrix(0.02449793,0,0,0.02449793,-247.34003,74.897674)" />
       <path
@@ -274,7 +284,7 @@
            x="43.775635"
            y="123.924"
            id="tspan21984-6">according to <tspan
-   style="fill:#83c5be;fill-opacity:1;font-weight:bold"
+   style="font-weight:bold;fill:#83c5be;fill-opacity:1"
    id="tspan51868">parameters</tspan></tspan></text>
       <circle
          style="fill:#83c5be;fill-opacity:1;stroke-width:0.564999;stroke-linecap:round;stroke-linejoin:round"
@@ -288,7 +298,7 @@
          style="stroke-linecap:butt;stroke-linejoin:round">
         <polygon
            style="fill:#3b484a"
-           points="62.011,279.022 72.574,249.043 60.637,252.066 38.52,283.096 "
+           points="60.637,252.066 38.52,283.096 62.011,279.022 72.574,249.043 "
            id="polygon14235-0-8-3-5"
            transform="matrix(0.02449793,0,0,0.02449793,-247.34003,74.897674)" />
         <path
@@ -465,7 +475,7 @@
          style="stroke-linecap:butt;stroke-linejoin:round">
         <polygon
            style="fill:#3b484a"
-           points="62.011,279.022 72.574,249.043 60.637,252.066 38.52,283.096 "
+           points="60.637,252.066 38.52,283.096 62.011,279.022 72.574,249.043 "
            id="polygon14235-0-8-3-5-77"
            transform="matrix(0.02449793,0,0,0.02449793,-247.34003,74.897674)" />
         <path
@@ -747,7 +757,7 @@
        style="stroke-linecap:butt;stroke-linejoin:round">
       <polygon
          style="fill:#3b484a"
-         points="72.574,249.043 60.637,252.066 38.52,283.096 62.011,279.022 "
+         points="38.52,283.096 62.011,279.022 72.574,249.043 60.637,252.066 "
          id="polygon14235-0-8-3-2"
          transform="matrix(0.02449793,0,0,0.02449793,-247.34003,74.897674)" />
       <path
@@ -896,7 +906,7 @@
            style="stroke-linecap:butt;stroke-linejoin:round">
           <polygon
              style="fill:#3b484a"
-             points="62.011,279.022 72.574,249.043 60.637,252.066 38.52,283.096 "
+             points="60.637,252.066 38.52,283.096 62.011,279.022 72.574,249.043 "
              id="polygon14235-0-8-3-7"
              transform="matrix(0.02449793,0,0,0.02449793,-247.34003,74.897674)" />
           <path
@@ -1243,7 +1253,7 @@
            style="stroke-linecap:butt;stroke-linejoin:round">
           <polygon
              style="fill:#3b484a"
-             points="60.637,252.066 38.52,283.096 62.011,279.022 72.574,249.043 "
+             points="62.011,279.022 72.574,249.043 60.637,252.066 38.52,283.096 "
              id="polygon14235-0-8-3-5-7"
              transform="matrix(0.02449793,0,0,0.02449793,-247.34003,74.897674)" />
           <path

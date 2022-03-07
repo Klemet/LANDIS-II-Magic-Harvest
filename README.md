@@ -1,6 +1,7 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/Klemet/LANDIS-II-Magic-Harvest/master/screenshots/logoMagicHarvest.svg" />
 </p>
+<h1 align="center">Magic Harvest</h1>
 
 
 # 📑 Description
@@ -11,12 +12,19 @@ It allows users to dynamically change the parameters of the harvest extensions o
 
 # ✨ How does it work ?
 
-<img src="https://raw.githubusercontent.com/Klemet/LANDIS-II-Magic-Harvest/master/screenshots/magicHarvestExplanation.svg" />
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Klemet/LANDIS-II-Magic-Harvest/main/screenshots/magicHarvestExplanation.svg" />
+</p>
+
 
 ⚠ **WARNING** : As Magic Harvest re-loads the parameters of your harvest extension, certain things have to be taken into account.
+
 In particular, **you should be careful of the ID number associated to the prescriptions, that is used to create the prescription maps**.
+
 When Magic Harvest re-loads the parameters of the harvest extension, the prescriptions that you define in the parameter file of the harvest extension are re-numbered starting from one.
+
 What that means is that **the ID "1" in your prescription maps might refer to a different prescription after Magic Harvest is done**.
+
 If you do not modify your the prescriptions that you define in the parameter file of the harvest extension, you will not have this problem. But if you do change them, **remember it** !
 
 # 🧱 Requirements
