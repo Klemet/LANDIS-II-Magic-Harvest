@@ -29,7 +29,7 @@ If you do not modify your the prescriptions that you define in the parameter fil
 
 # 🧱 Requirements
 
-To use the FRS extension, you need:
+To use Magic Harvest, you need:
 
 - The [LANDIS-II model v7.0](http://www.landis-ii.org/install) installed on your computer.
 - One of the succession extensions of LANDIS-II installed on your computer.
@@ -41,7 +41,7 @@ To use the FRS extension, you need:
 
 # 💾 Download
 
-Version 1.0 can be downloaded [here](https://github.com/Klemet/LANDIS-II-Magic-Harvest/releases/download/1.0/LANDIS-II-V7%20Magic%20harvest%201.0-setup.exe). To install it on your computer, just launch the installer.
+Version 1.0 can be downloaded [here](https://github.com/Klemet/LANDIS-II-Magic-Harvest/releases/download/v1.0/LANDIS-II-V7.Magic.harvest.1.0-setup.exe). To install it on your computer, just launch the installer.
 
 
 # 🛠 Parameterization and use
@@ -70,7 +70,7 @@ If you have a question, please send me an e-mail at clem.hardy@outlook.fr. I'll 
 
 You can also ask for help in the [LANDIS-II users group](http://www.landis-ii.org/users).
 
-If you come across any issue or suspected bug when using the FRS extension, please post about it in the [issue section of the Github repository of the module](https://github.com/Klemet/LANDIS-II-Magic-Harvest/issues).
+If you come across any issue or suspected bug when using Magic Harvest, please post about it in the [issue section of the Github repository of the module](https://github.com/Klemet/LANDIS-II-Magic-Harvest/issues).
 
 
 # ✒️ Author
