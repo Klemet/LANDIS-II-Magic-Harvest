@@ -108,7 +108,8 @@ namespace Landis.Extension.MagicHarvest
             modelCore.UI.WriteLine("Magic Harvest : Launching the python script at " + parameters.PythonScriptLocation);
             // We create the command that we will launch in the cmd
             string strCmdText;
-            strCmdText = "/C python " + parameters.PythonScriptLocation;
+            // We are going to give the current time step as a parameter for the python script
+            strCmdText = "/C python " + parameters.PythonScriptLocation + " " + modelCore.CurrentTime;
             // We launch the command and wait for it to finish
             Process cmd = System.Diagnostics.Process.Start("CMD.exe", strCmdText);
             cmd.WaitForExit();

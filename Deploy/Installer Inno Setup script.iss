@@ -49,7 +49,7 @@ Source: {#BuildDir}\Landis.Library.HarvestManagement-v4.dll; DestDir: {#ExtDir};
 Source: {#BuildDir}\Landis.Utilities.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall ignoreversion
 
 ; Complete example for testing the extension
-Source: "..\Examples\*"; DestDir: {#AppDir}\examples\{#ExtensionName}; Flags: ignoreversion
+Source: "..\Examples\BaseHarvest\*"; DestDir: {#AppDir}\Examples\{#ExtensionName}; Flags: ignoreversion
 
 ; LANDIS-II identifies the extension with the info in this .txt file
 ; NB. New releases must modify the name of this file and the info in it
