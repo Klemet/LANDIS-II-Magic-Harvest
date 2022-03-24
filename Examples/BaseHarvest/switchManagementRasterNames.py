@@ -7,7 +7,15 @@
 
 #%% 1. LOADING PACKAGES AND FUNCTIONS
 
-import os
+import os, sys
+
+if __name__ == "__main__":
+    # Remember : argument at index 0 contains the program name.
+    # The arguments that we want come after
+    timestep = sys.argv[1]
+    
+print("Python script : Timestep detected is " + str(timestep))
+
 # os.chdir(r"D:\OneDrive -UQAM\OneDrive - UQAM\1 - Projets\Thèse - Chapitre 3\2_Projet_extension_REHARVEST\Examples")
 
 print("Python script : Switching management area files !")

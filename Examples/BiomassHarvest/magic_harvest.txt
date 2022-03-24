@@ -1,0 +1,7 @@
+LandisData "MagicHarvest"
+
+Timestep 20
+
+HarvestExtensionParameterFile biomass-harvest_SetUp_s2e1.txt
+
+PythonScriptLocation ./switchManagementRasterNames.py
