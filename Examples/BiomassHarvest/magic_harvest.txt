@@ -1,4 +1,4 @@
-LandisData "MagicHarvest"
+LandisData "Magic Harvest"
 
 Timestep 20
 
