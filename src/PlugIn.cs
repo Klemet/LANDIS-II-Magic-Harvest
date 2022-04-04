@@ -130,7 +130,7 @@ namespace Landis.Extension.MagicHarvest
             // We don't reset the area of the management area because this is redone in FinishInitialization() (see https://github.com/LANDIS-II-Foundation/Library-Harvest-Mgmt/blob/aec2572e341122ecd14a39cf2961dccbd3b6073c/src/ManagementArea.cs#L187)
 
             // We load the list of management areas currently in the harvest extension to access them.
-            HarvestMgmtLib.IManagementAreaDataset managementAreasList = (HarvestMgmtLib.IManagementAreaDataset)harvestExtension.GetType().GetField("managementAreas", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(harvestExtension);
+            HarvestMgmtLib.ManagementAreaDataset managementAreasList = (HarvestMgmtLib.ManagementAreaDataset)harvestExtension.GetType().GetField("managementAreas", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(harvestExtension);
             foreach (HarvestMgmtLib.ManagementArea mgmtArea in managementAreasList)
             {
                 // We get the list of stands in the management area
