@@ -191,6 +191,7 @@ namespace Landis.Extension.MagicHarvest
                 // We create a new parser
                 Landis.Extension.BaseHarvest.InputParametersParser parser = new Landis.Extension.BaseHarvest.InputParametersParser(modelCore.Species);
                 // We use the parser to fill a new object containing the parameters
+                // ⚠ If an type error comes here concerning InputParametersParser, it must be because the wrong version of Base Harvest is referenced : v4 is needed for now.
                 HarvestMgmtLib.IInputParameters reloadedHarvestParameters = Landis.Data.Load<HarvestMgmtLib.IInputParameters>(parameters.HarvestExtensionParameterFile, parser);
 
                 // Re-initialize the management areas

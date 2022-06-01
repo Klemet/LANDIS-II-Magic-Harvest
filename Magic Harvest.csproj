@@ -40,13 +40,15 @@
     <Reference Include="Landis.Core.Implementation, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Landis.Core.Implementation.2.0.0\lib\netstandard2.0\Landis.Core.Implementation.dll</HintPath>
     </Reference>
-    <Reference Include="Landis.Extension.BaseHarvest-v5">
-      <HintPath>C:\Program Files\LANDIS-II-v7\extensions\Landis.Extension.BaseHarvest-v5.dll</HintPath>
+    <Reference Include="Landis.Extension.BaseHarvest-v4">
+      <HintPath>C:\Program Files\LANDIS-II-v7\extensions\Landis.Extension.BaseHarvest-v4.dll</HintPath>
     </Reference>
     <Reference Include="Landis.Extension.BiomassHarvest-v4">
       <HintPath>C:\Program Files\LANDIS-II-v7\extensions\Landis.Extension.BiomassHarvest-v4.dll</HintPath>
     </Reference>
-    <Reference Include="Landis.Library.HarvestManagement-v4, Version=4.2.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="Landis.Library.HarvestManagement-v3">
+      <HintPath>C:\Program Files\LANDIS-II-v7\extensions\Landis.Library.HarvestManagement-v3.dll</HintPath>
+    </Reference>
     <Reference Include="Landis.Library.SiteHarvest-v2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="Landis.SpatialModeling, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Landis.SpatialModeling.2.0.0\lib\netstandard2.0\Landis.SpatialModeling.dll</HintPath>
