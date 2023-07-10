@@ -8,7 +8,7 @@
 
 **Magic Harvest** is an extension for the [LANDIS-II](http://www.landis-ii.org/) model.
 
-It allows users to dynamically change the parameters of the harvest extensions of LANDIS-II ([Base Harvest](http://www.landis-ii.org/extensions/base-harvest) and [Biomass Harvest](http://www.landis-ii.org/extensions/biomass-harvest)) during a simulation, by running a Python script to edit the parameters files as wanted, and re-loading them.
+It allows users to dynamically change the parameters of the harvest extensions of LANDIS-II ([Base Harvest](http://www.landis-ii.org/extensions/base-harvest) and [Biomass Harvest](http://www.landis-ii.org/extensions/biomass-harvest)) during a simulation, by running a command to call another program during the simulation. This command can edit the parameters files as wanted (for exemple, by calling a R or Python script). Magic Harvest then forces the harvest extension to re-load its parameters now that the files are modified. 
 
 # ✨ How does it work ?
 
@@ -34,7 +34,7 @@ To use Magic Harvest, you need:
 - The [LANDIS-II model v7.0](http://www.landis-ii.org/install) installed on your computer.
 - One of the succession extensions of LANDIS-II installed on your computer.
 - One of the harvest extensions ([Base Harvest](http://www.landis-ii.org/extensions/base-harvest) or [Biomass Harvest](http://www.landis-ii.org/extensions/biomass-harvest)) installed on your computer.
-- [Python](https://www.python.org/downloads/) installed on your computer
+- The program that you want to launch during the simulation (e.g., Python or R) installed on your computer and able to be activated through a terminal (or command prompt in Windows)
 - The Magic Harvest extension installed on your computer (see Download section below).
 - The parameter files for your scenario (see Parameterization section below).
 
@@ -46,22 +46,22 @@ Version 1.0 can be downloaded [here](https://github.com/Klemet/LANDIS-II-Magic-H
 
 # 🛠 Parameterization and use
 
-The extension only requires two parameters :
+The extension only requires four parameters :
 
-- One indicating where is the parameter file for the harvest extension that you use
-  - The path should be relative to the scenario file of LANDIS-II, **not where the parameter file for Magic Harvest is**
-    - It should therefore be the same path to the harvest extension parameter file that you indicated in the scenario file
-- One indicating where is the python script that you want to launch
-  - Again, the path should be relative to where the scenario file of LANDIS-II is; **not where the parameter file for Magic Harvest is**.
-
+- `Timestep` indicates the frequency at which Magic Harvest should be run during the LANDIS-II simulation
+- `HarvestExtensionParameterFile` indicates the path of the parameter file of the harvest extension (Base Harvest or Biomass Harvest), relative to the folder where the LANDIS-II scenario is launched from. It should be the same path as indicated for the harvest extension in the main scenario file.
+- `ProcessToLaunch` is the name of the program that you want to call. You must be able to activate it in a terminal beforehand for it to work during a LANDIS-II simulation. This program can be Python (e.g., `python`) or `Rscript` to run a R script.
+- `ProcessArguments` contains the arguments that you want to give to the process to launch. For exemple, if you want to run a Python or an R script, `ProcessArguments` will have to contain the path to the script. You can add other arguments separated by spaces; but if you use spaces, remember to contain the whole string for the parameter between quotation marks (e.g., `"./RscriptTest.R second_argument third_argument"`).
+	- If you don't want to give any process argument, use `""` or `{none}` for this parameter.
+	- If you want to give the current time step at which Magic Harvest is being launched as an argument to your program (very useful in the case of Python or R scripts), put the string `{timestep}` inside `ProcessArguments` were you want the time step to be inserted as an argument. For exemple, you can use `"./RscriptTest.R {timestep}"`
 
 # 🎮 Example and testing
 
 If you want to experiment with the extension or test it, you can [download the example files](https://downgit.github.io/#/home?url=https://github.com/Klemet/LANDIS-II-Magic-Harvest/tree/main/Examples).
 
-To launch the example scenario, you'll need the [Age-Only succession](http://www.landis-ii.org/extensions/age-only-succession) extension and the [Base Harvest](http://www.landis-ii.org/extensions/base-harvest) extension installed on your computer, in addition to Magic Harvest. Just launch the `test_scenario.bat` file, and the example scenario should run.
+To launch the example scenarios, you'll need the [Age-Only succession](http://www.landis-ii.org/extensions/age-only-succession) extension and the [Base Harvest](http://www.landis-ii.org/extensions/base-harvest) or [Biomass Harvest](http://www.landis-ii.org/extensions/biomass-harvest) extension installed on your computer, in addition to Magic Harvest. Just launch the `.bat` files in the exemple scenarios folders, and the selected example scenario should run.
 
-The example scenarios lasts 150 years of simulation, and updates the harvest parameter with magic harvest every 70 years; the update is simply a switch between two rasters of management areas, and two parameter files for the base harvest extension.
+The example scenarios lasts 150 years of simulation, and updates the harvest parameter with magic harvest every 70 years; by default, it uses a python script to switch between two rasters of management areas, and two parameter files for the base harvest extension.
 
 
 # ☎️ Support

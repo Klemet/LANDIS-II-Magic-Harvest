@@ -1,0 +1,9 @@
+LandisData   Extension
+
+Name         "Magic Harvest"
+Version      "1.2"
+Type         disturbance:harvest
+Assembly     Landis.Extension.MagicHarvest
+Class        Landis.Extension.MagicHarvest.PlugIn
+Description  "Allows the update of the parameters of the harvest extension during the simulation"
+CoreVersion  7.0

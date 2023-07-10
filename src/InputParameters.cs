@@ -33,13 +33,21 @@ namespace Landis.Extension.MagicHarvest
         }
 
         /// <summary>
-        /// The location of the python file to run, relative to the folder with the LANDIS-II scenario files.
+        /// The command to launch in the console when Magic Harvest is activated.
         /// </summary>
-        string PythonScriptLocation
-		{
-			get; set;
-		}
-	}
+        string ProcessToLaunch
+        {
+            get; set;
+        }
+
+        /// <summary>
+        /// The command to launch in the console when Magic Harvest is activated.
+        /// </summary>
+        string ProcessArguments
+        {
+            get; set;
+        }
+    }
 
 	/// <summary>
 	/// Parameters for the plug-in.
@@ -49,15 +57,16 @@ namespace Landis.Extension.MagicHarvest
 	{
 		private int timestep;
         private string harvestExtensionParameterFile;
-        private string pythonScriptLocation;
+        private string processToLaunch;
+        private string processArguments;
 
-		// ------------------------------------------------------------------------------
-		// BASIC PARAMETERS
+        // ------------------------------------------------------------------------------
+        // BASIC PARAMETERS
 
-		/// <summary>
-		/// Timestep (years)
-		/// </summary>
-		public int Timestep
+        /// <summary>
+        /// Timestep (years)
+        /// </summary>
+        public int Timestep
 		{
 			get
 			{
@@ -89,19 +98,34 @@ namespace Landis.Extension.MagicHarvest
         /// <summary>
         /// The location of the python file to run, relative to the folder with the LANDIS-II scenario files.
         /// </summary>
-        public string PythonScriptLocation
+        public string ProcessToLaunch
         {
-			get
-			{
-				return pythonScriptLocation;
-			}
-			set
-			{
-                pythonScriptLocation = value;
-			}
-		}
+            get
+            {
+                return processToLaunch;
+            }
+            set
+            {
+                processToLaunch = value;
+            }
+        }
 
-		public InputParameters()
+        /// <summary>
+        /// The location of the python file to run, relative to the folder with the LANDIS-II scenario files.
+        /// </summary>
+        public string ProcessArguments
+        {
+            get
+            {
+                return processArguments;
+            }
+            set
+            {
+                processArguments = value;
+            }
+        }
+
+        public InputParameters()
 		{
 		}
 	}
