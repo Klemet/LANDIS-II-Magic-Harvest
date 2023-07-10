@@ -57,13 +57,18 @@ namespace Landis.Extension.MagicHarvest
             ReadVar(HarvestExtensionParameterFile);
             parameters.HarvestExtensionParameterFile = HarvestExtensionParameterFile.Value;
 
-            // We read the python script location
-            InputVar<string> PythonScriptLocation = new InputVar<string>("PythonScriptLocation");
-			ReadVar(PythonScriptLocation);
-			parameters.PythonScriptLocation = PythonScriptLocation.Value;
+            // We read the process to launch
+            InputVar<string> ProcessToLaunch = new InputVar<string>("ProcessToLaunch");
+			ReadVar(ProcessToLaunch);
+			parameters.ProcessToLaunch = ProcessToLaunch.Value;
 
-			// Now that everything is done, we return the parameter object.
-			return (parameters);
+            // We read the arguments, if they are here
+            InputVar<string> ProcessArguments = new InputVar<string>("ProcessArguments");
+            ReadVar(ProcessArguments);
+            parameters.ProcessArguments = ProcessArguments.Value;
+
+            // Now that everything is done, we return the parameter object.
+            return (parameters);
 		}
 
 		//---------------------------------------------------------------------
