@@ -41,8 +41,9 @@ To use Magic Harvest, you need:
 
 # 💾 Download
 
-Version 1.2 can be downloaded [here](https://github.com/Klemet/LANDIS-II-Magic-Harvest/releases/download/v1.2/LANDIS-II-V7.Magic.harvest.1.2-setup.exe). To install it on your computer, just launch the installer.
+You can download the latest release version for Windows on the [release page]([url](https://github.com/Klemet/LANDIS-II-Magic-Harvest/releases/)). To install it on your computer, just launch the installer (`LANDIS-II-V7.Magic.harvest.X.X-setup.exe`).
 
+For Linux or for Compute Canada's servers, you'll have to clone the repo and use the `dotnet build -c Release` command, as for any other LANDIS-II extension you want to use on Linux.
 
 # 🛠 Parameterization and use
 
