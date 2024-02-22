@@ -88,13 +88,13 @@ namespace Landis.Extension.MagicHarvest
             // 1. DETECTING THE HARVEST EXTENSION
 
             modelCore.UI.WriteLine("Magic Harvest is now running");
-            modelCore.UI.WriteLine("Magic Harvest : Printing extensions detected");
+            // modelCore.UI.WriteLine("Magic Harvest : Printing extensions detected");
             List<ExtensionMain> listOfExtensions = (List<ExtensionMain>)modelCore.GetType().GetField("disturbAndOtherExtensions", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(modelCore);
-            modelCore.UI.WriteLine(listOfExtensions.ToString());
+            // modelCore.UI.WriteLine(listOfExtensions.ToString());
             List<ExtensionMain> listOfHarvestExtension = new List<ExtensionMain>();
             foreach (ExtensionMain extension in listOfExtensions)
             {
-                modelCore.UI.WriteLine(extension.Name);
+                // modelCore.UI.WriteLine(extension.Name);
                 if (extension.Name.Contains("Base Harvest") || extension.Name.Contains("Biomass Harvest")) { listOfHarvestExtension.Add(extension); }
             }
             ExtensionMain harvestExtension = listOfHarvestExtension[0];
@@ -112,7 +112,7 @@ namespace Landis.Extension.MagicHarvest
             if (processArgumentsReplaced.Contains("{none}")) { processArgumentsReplaced = ""; }
             // We launch the command and wait for it to finish
             modelCore.UI.WriteLine("Magic Harvest : Launching process " + parameters.ProcessToLaunch + " with arguments " + processArgumentsReplaced);
-            modelCore.UI.WriteLine("Magic Harvest : USING NON-CMD COMMAND");
+            // modelCore.UI.WriteLine("Magic Harvest : USING NON-CMD COMMAND");
             Process cmd = System.Diagnostics.Process.Start(parameters.ProcessToLaunch, processArgumentsReplaced);
             cmd.WaitForExit();
             modelCore.UI.WriteLine("Magic Harvest : Command has finished running");
