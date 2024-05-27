@@ -29,6 +29,10 @@ If you do not modify your the prescriptions that you define in the parameter fil
 
 Second, **the scheduling of your repeated prescriptions will be lost in the process !**. This is because of the re-initialization of the harvest extension. You can track this scheduling via your python or R script in many different ways to manage it "manually" (via your script rather than with the internal variables of the harvest extensions), by dumping the schedule for each stand into a file (e.g. a .JSON file) that will be read by your script at the next time step.
 
+## Can I use the extension just to run a script, without altering anything that happens in the harvest extension ?
+
+Yes; this functionality has been added to v1.3. You can now set the optional parameter `NoHarvestReInitialization True` **at the end of your parameter file**. This will disable the re-initialization of the harvest extension, keeping every parameter, schedules or variables of the harvest extension intact. In essence, this allows you to use Magic Harvest as a simple tool to run a script during a LANDIS-II simulation.
+
 # 🧱 Requirements
 
 To use Magic Harvest, you need:
