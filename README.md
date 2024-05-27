@@ -19,13 +19,15 @@ It allows users to dynamically change the parameters of the harvest extensions o
 
 ⚠ **WARNING** : As Magic Harvest re-loads the parameters of your harvest extension, certain things have to be taken into account.
 
-In particular, **you should be careful of the ID number associated to the prescriptions, that is used to create the prescription maps**.
+First, **you should be careful of the ID number associated to the prescriptions, that is used to create the prescription maps**.
 
 When Magic Harvest re-loads the parameters of the harvest extension, the prescriptions that you define in the parameter file of the harvest extension are re-numbered starting from one.
 
 What that means is that **the ID "1" in your prescription maps might refer to a different prescription after Magic Harvest is done**.
 
 If you do not modify your the prescriptions that you define in the parameter file of the harvest extension, you will not have this problem. But if you do change them, **remember it** !
+
+Second, **the scheduling of your repeated prescriptions will be lost in the process !**. This is because of the re-initialization of the harvest extension. You can track this scheduling via your python or R script in many different ways to manage it "manually" (via your script rather than with the internal variables of the harvest extensions), by dumping the schedule for each stand into a file (e.g. a .JSON file) that will be read by your script at the next time step.
 
 # 🧱 Requirements
 
@@ -41,8 +43,9 @@ To use Magic Harvest, you need:
 
 # 💾 Download
 
-Version 1.2 can be downloaded [here](https://github.com/Klemet/LANDIS-II-Magic-Harvest/releases/download/v1.2/LANDIS-II-V7.Magic.harvest.1.2-setup.exe). To install it on your computer, just launch the installer.
+You can download the latest release version for Windows on the [release page](https://github.com/Klemet/LANDIS-II-Magic-Harvest/releases/). To install it on your computer, just launch the installer (`LANDIS-II-V7.Magic.harvest.X.X-setup.exe`).
 
+For Linux or for Compute Canada's servers, you'll have to clone the repo and use the `dotnet build -c Release` command, as for any other LANDIS-II extension you want to use on Linux.
 
 # 🛠 Parameterization and use
 
