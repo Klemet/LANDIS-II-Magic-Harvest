@@ -5,6 +5,8 @@
 using Landis.Utilities;
 using System.Collections.Generic;
 using Landis.Core;
+using System.Data;
+using System;
 
 namespace Landis.Extension.MagicHarvest
 {
@@ -66,6 +68,32 @@ namespace Landis.Extension.MagicHarvest
             InputVar<string> ProcessArguments = new InputVar<string>("ProcessArguments");
             ReadVar(ProcessArguments);
             parameters.ProcessArguments = ProcessArguments.Value;
+
+			// We read the optional parameter that will overrride the re-initialization of the harvest extension
+            InputVar<string> NoHarvestReInitialization = new InputVar<string>("NoHarvestReInitialization");
+			try
+			{
+				ReadVar(NoHarvestReInitialization);
+				if (NoHarvestReInitialization.Value.ToString().ToLower() != "false" & NoHarvestReInitialization.Value.ToString().ToLower() != "true")
+				{
+					throw new Exception("NoHarvestReInitialization parameter value should be true or false.");
+				}
+				else { parameters.NoHarvestReInitialization = bool.Parse(NoHarvestReInitialization.Value.ToString().ToLower()); }
+				
+			}
+			catch (Exception ex)
+			{
+				if (!ex.Message.Contains("Expected the name \"NoHarvestReInitialization\""))
+				{
+					throw;
+				}
+				else
+				{
+					Console.WriteLine($"Additional parameter \"NoHarvestReInitialization\" not detected, put to \"false\" by default.");
+					parameters.NoHarvestReInitialization = false;
+				}
+            }
+            
 
             // Now that everything is done, we return the parameter object.
             return (parameters);

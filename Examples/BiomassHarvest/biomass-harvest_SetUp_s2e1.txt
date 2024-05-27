@@ -88,10 +88,10 @@ Prescription    OakPatchCutting
     HarvestImplementations
 >>	Mgmt Area	Prescription		Harvest Area	BeginTime	EndTime
 >> 	---------   	------------   		------------   	---------- 	--------
-	1		SelectiveNorthernHardwood	10%	0  	    	50
-	2		SelectiveNorthernHardwood	10%	0  	    	50
->>	1		MaxAgeClearcut			5%	0	   	50
->>	2		MaxAgeClearcut			5%	0	    	50
+>>	1		SelectiveNorthernHardwood	10%	0  	    	50
+>>	2		SelectiveNorthernHardwood	10%	0  	    	50
+	1		MaxAgeClearcut			5%	0	   	50
+	2		MaxAgeClearcut			5%	0	    	50
 
 
 	

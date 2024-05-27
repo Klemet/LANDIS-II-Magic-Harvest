@@ -7,3 +7,5 @@ HarvestExtensionParameterFile biomass-harvest_SetUp_s2e1.txt
 ProcessToLaunch python
 
 ProcessArguments "./switchManagementRasterNames.py {timestep}"
+
+NoHarvestReInitialization false

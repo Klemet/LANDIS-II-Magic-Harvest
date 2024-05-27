@@ -47,6 +47,14 @@ namespace Landis.Extension.MagicHarvest
         {
             get; set;
         }
+
+        /// <summary>
+        /// A parameter indicating if the module should override the re-initialization of the harvest extension.
+        /// </summary>
+        bool NoHarvestReInitialization
+        {
+            get; set;
+        }
     }
 
 	/// <summary>
@@ -59,6 +67,7 @@ namespace Landis.Extension.MagicHarvest
         private string harvestExtensionParameterFile;
         private string processToLaunch;
         private string processArguments;
+        private bool noHarvestReInitialization;
 
         // ------------------------------------------------------------------------------
         // BASIC PARAMETERS
@@ -122,6 +131,25 @@ namespace Landis.Extension.MagicHarvest
             set
             {
                 processArguments = value;
+            }
+        }
+
+        /// <summary>
+        /// A parameter indicating if the module should override the re-initialization of the harvest extension.
+        /// </summary>
+        public bool NoHarvestReInitialization
+        {
+            get
+            {
+                return noHarvestReInitialization;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    noHarvestReInitialization = value;
+                }
+                else noHarvestReInitialization = false;
             }
         }
 
