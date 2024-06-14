@@ -37,7 +37,7 @@ Yes; this functionality has been added to v1.3. You can now set the optional par
 
 To use Magic Harvest, you need:
 
-- The [LANDIS-II model v7.0](http://www.landis-ii.org/install) installed on your computer.
+- The [LANDIS-II model v8.0](http://www.landis-ii.org/install) installed on your computer.
 - One of the succession extensions of LANDIS-II installed on your computer.
 - One of the harvest extensions ([Base Harvest](http://www.landis-ii.org/extensions/base-harvest) or [Biomass Harvest](http://www.landis-ii.org/extensions/biomass-harvest)) installed on your computer.
 - The program that you want to launch during the simulation (e.g., Python or R) installed on your computer and able to be activated through a terminal (or command prompt in Windows)
@@ -47,7 +47,7 @@ To use Magic Harvest, you need:
 
 # 💾 Download
 
-You can download the latest release version for Windows on the [release page](https://github.com/Klemet/LANDIS-II-Magic-Harvest/releases/). To install it on your computer, just launch the installer (`LANDIS-II-V7.Magic.harvest.X.X-setup.exe`).
+You can download the latest release version for Windows on the [release page](https://github.com/Klemet/LANDIS-II-Magic-Harvest/releases/). To install it on your computer, just launch the installer (`LANDIS-II-V8.Magic.harvest.X.X-setup.exe`).
 
 For Linux or for Compute Canada's servers, you'll have to clone the repo and use the `dotnet build -c Release` command, as for any other LANDIS-II extension you want to use on Linux.
 
