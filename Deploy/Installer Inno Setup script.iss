@@ -1,7 +1,7 @@
 ; LANDIS-II Extension infomation
 #define CoreRelease "LANDIS-II-V8"
 #define ExtensionName "Magic harvest"
-#define AppVersion "2.0"
+#define AppVersion "2.1"
 #define AppPublisher "Clément Hardy"
 
 ; Build directory
@@ -55,12 +55,8 @@ Source: "..\Examples\Core-v8\Biomass Harvest\*"; DestDir: {#AppDir}\Examples\{#E
 
 ; LANDIS-II identifies the extension with the info in this .txt file
 ; NB. New releases must modify the name of this file and the info in it
-#define InfoTxt "Magic harvest v2.0.txt"
+#define InfoTxt "Magic harvest v2.1.txt"
 Source: .\Installation Files\plug-ins-installer-files\{#InfoTxt}; DestDir: {#LandisPlugInDir}
-; WARNING : At the time of making this update, Base Harvest hasn't been updated to Core v8 of LANDIS-II.
-; Therefore, I'm obliged to pack the dll of the old Base Harvest (v7), or it will not work.
-; However, if it's already in the LANDIS-II-v8 install folder, I won't overwrite it as it might be a new version.
-Source: {#BuildDir}\Landis.Extension.BaseHarvest-v5.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Run]

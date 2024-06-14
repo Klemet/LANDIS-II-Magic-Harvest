@@ -1,1 +1,1 @@
-As the date of making the release of Magic Harvest 2.0 for LANDIS-II-v8 (14th of June 2024), Base Harvest seems to not have been updated to Core v8. As such, I wasn't able to provide examples files for it.
+Base Harvest has been discontinued since the release of LANDIS-II-v8. Therefore, the code of Magic Harvest has been adapted to not consider Base Harvest anymore.

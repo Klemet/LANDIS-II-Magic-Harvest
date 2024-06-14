@@ -182,55 +182,9 @@ namespace Landis.Extension.MagicHarvest
                 // 5. RELOADING THE PARAMETERS OF THE EXTENSION
 
                 modelCore.UI.WriteLine("Magic Harvest : Re-loading the parameters of the harvest extension");
-                // Things are a bit different if we are talking about base harvest versus biomass harvest. We make a if for each of them.
-                if (harvestExtension.Name.Contains("Base"))
-                {
-                    modelCore.UI.WriteLine("Magic Harvest : Acting for Base Harvest...");
 
-                    // We re-do the initialization of the extension, without re-doing the logs.
-                    // It would be simpler to call harvestExtension.Initialize();, but this would reset the harvest logs; we don't want that.
-                    // See https://github.com/LANDIS-II-Foundation/Extension-Base-Harvest/blob/7e156827276960f00ca5db76e8bd97f0d379b49b/src/PlugIn.cs#L90 to see what is replicated here.
-
-                    // Force Base Harvest to re-read its parameters
-                    modelCore.UI.WriteLine("Magic Harvest : Parsing parameters...");
-                    // We create a new parser
-                    Landis.Extension.BaseHarvest.InputParametersParser parser = new Landis.Extension.BaseHarvest.InputParametersParser(modelCore.Species);
-                    // We use the parser to fill a new object containing the parameters
-                    // ⚠ If an type error comes here concerning InputParametersParser, it must be because the wrong version of Base Harvest is referenced : v4 is needed for now.
-                    HarvestMgmtLib.IInputParameters reloadedHarvestParameters = Landis.Data.Load<HarvestMgmtLib.IInputParameters>(parameters.HarvestExtensionParameterFile, parser);
-
-                    // Re-initialize the management areas
-                    modelCore.UI.WriteLine("Magic Harvest : Reading management areas map...");
-                    // We update both the "real" managementAreas private property of the harvest extension; and the "copy" we made earlier,
-                    // because we will need this copy updated to give it to ManagementAreas.ReadMap() below.
-                    harvestExtension.GetType().GetField("managementAreas", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(harvestExtension, reloadedHarvestParameters.ManagementAreas);
-                    managementAreasList = reloadedHarvestParameters.ManagementAreas;
-                    // We make Base Harvest re-read the management area map
-                    ModelCore.UI.WriteLine("   Reading management-area map {0} ...", reloadedHarvestParameters.ManagementAreaMap);
-                    HarvestMgmtLib.ManagementAreas.ReadMap(reloadedHarvestParameters.ManagementAreaMap, managementAreasList);
-
-                    // We make Base Harvest re-read the stands map
-                    modelCore.UI.WriteLine("Magic Harvest : Reading stands map...");
-                    PlugIn.ModelCore.UI.WriteLine("   Reading stand map {0} ...", reloadedHarvestParameters.StandMap);
-                    HarvestMgmtLib.Stands.ReadMap(reloadedHarvestParameters.StandMap);
-
-                    modelCore.UI.WriteLine("Magic Harvest : Re-initializing site variables");
-                    HarvestMgmtLib.SiteVars.GetExternalVars();
-
-                    // We finish initialisation of the management areas.
-                    foreach (HarvestMgmtLib.ManagementArea mgmtArea in managementAreasList)
-                    {
-                        mgmtArea.FinishInitialization();
-                    }
-
-                    // We re-load the prescription maps
-                    harvestExtension.GetType().GetField("prescriptionMaps", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(harvestExtension, new HarvestMgmtLib.PrescriptionMaps(reloadedHarvestParameters.PrescriptionMapNames));
-
-
-                    modelCore.UI.WriteLine("Magic Harvest : Re-loading is finished.");
-                }
                 // Now we take care of Biomass Harvest by reproducing https://github.com/LANDIS-II-Foundation/Extension-Biomass-Harvest/blob/e4fe90fb5a761ac00d01ee0ff39eae5f6d81b098/src/PlugIn.cs#L115
-                else
+                if (harvestExtension.Name.Contains("Biomass Harvest"))
                 {
                     modelCore.UI.WriteLine("Magic Harvest : Acting for Biomass Harvest...");
 
@@ -279,6 +233,10 @@ namespace Landis.Extension.MagicHarvest
                         harvestExtension.GetType().GetField("biomassMaps", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(harvestExtension, new BiomassHarvest.BiomassMaps(reloadedHarvestParameters.BiomassMapNames));
 
                     modelCore.UI.WriteLine("Magic Harvest : Re-loading is finished.");
+                }
+                else
+                {
+                    throw new Exception("Magic Harvest couldn't detect Biomass Harvest properly. Maybe another harvest extension has been used ?");
                 }
                 // ----------------------------------------------------------------------------------
             }
