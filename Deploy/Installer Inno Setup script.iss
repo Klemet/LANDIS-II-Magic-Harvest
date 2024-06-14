@@ -1,16 +1,16 @@
 ; LANDIS-II Extension infomation
-#define CoreRelease "LANDIS-II-V7"
+#define CoreRelease "LANDIS-II-V8"
 #define ExtensionName "Magic harvest"
-#define AppVersion "1.3"
+#define AppVersion "2.0"
 #define AppPublisher "Clément Hardy"
 
 ; Build directory
 #define BuildDir "..\bin\Release"
 
 ; LANDIS-II installation directories
-#define ExtDir "C:\Program Files\LANDIS-II-v7\extensions"
-#define AppDir "C:\Program Files\LANDIS-II-v7"
-#define LandisPlugInDir "C:\Program Files\LANDIS-II-v7\plug-ins-installer-files"
+#define ExtDir "C:\Program Files\LANDIS-II-v8\extensions"
+#define AppDir "C:\Program Files\LANDIS-II-v8"
+#define LandisPlugInDir "C:\Program Files\LANDIS-II-v8\plug-ins-installer-files"
 #define ExtensionsCmd AppDir + "\commands\landis-ii-extensions.cmd"
 
 [Setup]
@@ -45,18 +45,23 @@ Source: {#BuildDir}\Landis.Extension.MagicHarvest.dll; DestDir: {#ExtDir}; Flags
 
 ; Requisite auxiliary libraries
 ; NB. These libraries are used by other extensions and thus are never uninstalled.
+; These library don't seem to have changed with the passage to Core v8; but I downdloaded the ones from 
+; https://github.com/LANDIS-II-Foundation/Support-Library-Dlls-v8 anyway, overriding the previous ones.
 Source: {#BuildDir}\Landis.Library.HarvestManagement-v4.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall ignoreversion
 Source: {#BuildDir}\Landis.Utilities.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall ignoreversion
 
 ; Complete example for testing the extension
-Source: "..\Examples\BaseHarvest\*"; DestDir: {#AppDir}\Examples\{#ExtensionName}; Flags: ignoreversion
+Source: "..\Examples\Core-v8\Biomass Harvest\*"; DestDir: {#AppDir}\Examples\{#ExtensionName}; Flags: ignoreversion
 
 ; LANDIS-II identifies the extension with the info in this .txt file
 ; NB. New releases must modify the name of this file and the info in it
-#define InfoTxt "Magic harvest v1.3.txt"
+#define InfoTxt "Magic harvest v2.0.txt"
 Source: .\Installation Files\plug-ins-installer-files\{#InfoTxt}; DestDir: {#LandisPlugInDir}
+; WARNING : At the time of making this update, Base Harvest hasn't been updated to Core v8 of LANDIS-II.
+; Therefore, I'm obliged to pack the dll of the old Base Harvest (v7), or it will not work.
+; However, if it's already in the LANDIS-II-v8 install folder, I won't overwrite it as it might be a new version.
+Source: {#BuildDir}\Landis.Extension.BaseHarvest-v5.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
-
 
 [Run]
 Filename: {#ExtensionsCmd}; Parameters: "remove ""Magic Harvest"" "; WorkingDir: {#LandisPlugInDir}

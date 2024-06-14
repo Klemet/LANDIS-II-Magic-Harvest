@@ -285,5 +285,10 @@ namespace Landis.Extension.MagicHarvest
 
 
         } // End of run function
+
+        public override void AddCohortData()
+        {
+            return;
+        }
     } // End of PlugIn class
 } // End of namespace
