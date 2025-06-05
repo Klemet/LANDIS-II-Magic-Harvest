@@ -13,6 +13,17 @@
     <FileAlignment>512</FileAlignment>
     <Deterministic>false</Deterministic>
     <TargetFrameworkProfile />
+	<AssemblyVersion>2.2</AssemblyVersion>
+    <RootNamespace>Landis.Extension.MagicHarvest</RootNamespace>
+    <AssemblyName>Landis.Extension.MagicHarvest</AssemblyName>
+    <AssemblyTitle>Landis.Extension.MagicHarvest</AssemblyTitle>
+    <PackageProjectUrl>http://www.landis-ii.org</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Klemet/LANDIS-II-Magic-Harvest</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>LANDIS-II;Landis;Extension;Harvest</PackageTags>
+    <Authors>Clement Hardy</Authors>
+    <Description>Magic Harvest Extension</Description>
+	<Deterministic>false</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,16 +51,16 @@
     <Reference Include="Landis.Core.Implementation, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Landis.Core.Implementation.3.0.1\lib\netstandard2.0\Landis.Core.Implementation.dll</HintPath>
     </Reference>
-    <Reference Include="Landis.Extension.BiomassHarvest-v4">
-      <HintPath>C:\Program Files\LANDIS-II-v8\extensions\Landis.Extension.BiomassHarvest-v4.dll</HintPath>
-    </Reference>
     <Reference Include="Landis.Landscapes, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Landis.Landscapes.2.0.1\lib\netstandard2.0\Landis.Landscapes.dll</HintPath>
     </Reference>
-    <Reference Include="Landis.Library.HarvestManagement-v4, Version=4.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\LANDIS-II-v8\extensions\Landis.Library.HarvestManagement-v4.dll</HintPath>
+    <Reference Include="Landis.Extension.BiomassHarvest-v6">
+      <HintPath>.\src\lib\Landis.Extension.BiomassHarvest-v6.dll</HintPath>
     </Reference>
+    <Reference Include="Landis.Library.HarvestManagement-v4">
+		<SpecificVersion>False</SpecificVersion>
+		<HintPath>.\src\lib\Landis.Library.HarvestManagement-v4.dll</HintPath>
+	</Reference>
     <Reference Include="Landis.Library.SiteHarvest-v2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="Landis.SpatialModeling, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Landis.SpatialModeling.2.0.1\lib\netstandard2.0\Landis.SpatialModeling.dll</HintPath>

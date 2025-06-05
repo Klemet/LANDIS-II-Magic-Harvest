@@ -1,7 +1,7 @@
 ; LANDIS-II Extension infomation
 #define CoreRelease "LANDIS-II-V8"
 #define ExtensionName "Magic harvest"
-#define AppVersion "2.1"
+#define AppVersion "2.2"
 #define AppPublisher "Clément Hardy"
 
 ; Build directory
@@ -55,7 +55,7 @@ Source: "..\Examples\Core-v8\Biomass Harvest\*"; DestDir: {#AppDir}\Examples\{#E
 
 ; LANDIS-II identifies the extension with the info in this .txt file
 ; NB. New releases must modify the name of this file and the info in it
-#define InfoTxt "Magic harvest v2.1.txt"
+#define InfoTxt "Magic harvest v2.2.txt"
 Source: .\Installation Files\plug-ins-installer-files\{#InfoTxt}; DestDir: {#LandisPlugInDir}
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
