@@ -8,7 +8,9 @@
 
 **Magic Harvest** is an extension for the [LANDIS-II](http://www.landis-ii.org/) model.
 
-It allows users to dynamically change the parameters of the harvest extensions of LANDIS-II ([Base Harvest](http://www.landis-ii.org/extensions/base-harvest) and [Biomass Harvest](http://www.landis-ii.org/extensions/biomass-harvest)) during a simulation, by running a command to call another program during the simulation. This command can edit the parameters files as wanted (for exemple, by calling a R or Python script). Magic Harvest then forces the harvest extension to re-load its parameters now that the files are modified. 
+It allows users to dynamically change the parameters of the [Biomass Harvest](http://www.landis-ii.org/extensions/biomass-harvest) extension of LANDIS-II during a simulation, by running a command to call another program during the simulation. This command can edit the parameters files as wanted (for exemple, by calling a R or Python script). Magic Harvest then forces the harvest extension to re-load its parameters now that the files are modified.
+
+> 💡 _Magic Harvest used to be compatible with Base Harvest too, but Base Harvest has now been retired with the version 8 of LANDIS-II. Magic Harvest is currently not compatible with any other harvest extension than Biomass Harvest._
 
 # ✨ How does it work ?
 
@@ -17,17 +19,17 @@ It allows users to dynamically change the parameters of the harvest extensions o
 </p>
 
 
-⚠ **WARNING** : As Magic Harvest re-loads the parameters of your harvest extension, certain things have to be taken into account.
+⚠ **WARNING** : As Magic Harvest re-loads the parameters of your Biomass Harvest, certain things have to be taken into account.
 
 First, **you should be careful of the ID number associated to the prescriptions, that is used to create the prescription maps**.
 
-When Magic Harvest re-loads the parameters of the harvest extension, the prescriptions that you define in the parameter file of the harvest extension are re-numbered starting from one.
+When Magic Harvest re-loads the parameters of Biomass Harvest, the prescriptions that you define in the parameter file of Biomass Harvest are re-numbered starting from one.
 
 What that means is that **the ID "1" in your prescription maps might refer to a different prescription after Magic Harvest is done**.
 
-If you do not modify your the prescriptions that you define in the parameter file of the harvest extension, you will not have this problem. But if you do change them, **remember it** !
+If you do not modify your the prescriptions that you define in the parameter file of Biomass Harvest, you will not have this problem. But if you do change them, **remember it** !
 
-Second, **the scheduling of your repeated prescriptions will be lost in the process !**. This is because of the re-initialization of the harvest extension. You can track this scheduling via your python or R script in many different ways to manage it "manually" (via your script rather than with the internal variables of the harvest extensions), by dumping the schedule for each stand into a file (e.g. a .JSON file) that will be read by your script at the next time step.
+Second, **the scheduling of your repeated prescriptions will be lost in the process !**. This is because of the re-initialization of Biomass Harvest. You can track this scheduling via your python or R script in many different ways to manage it "manually" (via your script rather than with the internal variables of the harvest extensions), by dumping the schedule for each stand into a file (e.g. a .JSON file) that will be read by your script at the next time step.
 
 ## Can I use the extension just to run a script, without altering anything that happens in the harvest extension ?
 
@@ -38,9 +40,9 @@ Yes; this functionality has been added to v1.3. You can now set the optional par
 To use Magic Harvest, you need:
 
 - The [LANDIS-II model v8.0](http://www.landis-ii.org/install) installed on your computer.
-- One of the succession extensions of LANDIS-II installed on your computer.
-- One of the harvest extensions ([Base Harvest](http://www.landis-ii.org/extensions/base-harvest) or [Biomass Harvest](http://www.landis-ii.org/extensions/biomass-harvest)) installed on your computer.
-- The program that you want to launch during the simulation (e.g., Python or R) installed on your computer and able to be activated through a terminal (or command prompt in Windows)
+- One of the succession extensions of LANDIS-II installed on your computer (at least Biomass Succession).
+- [Biomass Harvest](http://www.landis-ii.org/extensions/biomass-harvest)) installed on your computer.
+- The program that you want to launch during the simulation (e.g., Python or R) installed on your computer and able to be activated through a terminal (or command prompt in Windows). **I strongly recommand you try to call your command first in a command prompt before launching a LANDIS-II simulation with Magic Harvest, to be sure that your command is recognized.**
 - The Magic Harvest extension installed on your computer (see Download section below).
 - The parameter files for your scenario (see Parameterization section below).
 
@@ -49,7 +51,7 @@ To use Magic Harvest, you need:
 
 You can download the latest release version for Windows on the [release page](https://github.com/Klemet/LANDIS-II-Magic-Harvest/releases/). To install it on your computer, just launch the installer (`LANDIS-II-V8.Magic.harvest.X.X-setup.exe`).
 
-For Linux or for Compute Canada's servers, you'll have to clone the repo and use the `dotnet build -c Release` command, as for any other LANDIS-II extension you want to use on Linux.
+For Linux or for Compute Canada's servers, you'll have to clone the repo and use the `dotnet build -c Release` command, as for any other LANDIS-II extension you want to use on Linux. You can also check out the official [Tool-Docker-Apptainer](https://github.com/LANDIS-II-Foundation/Tool-Docker-Apptainer) repository of the LANDIS-II foundation that contains Docker images with Magic Harvest already compile inside of them, which can be transformed easily in an Apptainer that you can run on any Hypercomputing Cluster or on Linux. All of the instructions are in the README of [Tool-Docker-Apptainer](https://github.com/LANDIS-II-Foundation/Tool-Docker-Apptainer).
 
 # 🛠 Parameterization and use
 
@@ -66,7 +68,7 @@ The extension only requires four parameters :
 
 If you want to experiment with the extension or test it, you can [download the example files](https://downgit.github.io/#/home?url=https://github.com/Klemet/LANDIS-II-Magic-Harvest/tree/main/Examples).
 
-To launch the example scenarios, you'll need the [Age-Only succession](http://www.landis-ii.org/extensions/age-only-succession) extension and the [Base Harvest](http://www.landis-ii.org/extensions/base-harvest) or [Biomass Harvest](http://www.landis-ii.org/extensions/biomass-harvest) extension installed on your computer, in addition to Magic Harvest. Just launch the `.bat` files in the exemple scenarios folders, and the selected example scenario should run.
+To launch the example scenarios, you'll need the [Biomass Succession]([http://www.landis-ii.org/extensions/age-only-succession](https://github.com/LANDIS-II-Foundation/Extension-Biomass-Succession)) extension and the [Biomass Harvest](http://www.landis-ii.org/extensions/biomass-harvest) extension installed on your computer, in addition to Magic Harvest. Just launch the `.bat` files in the exemple scenarios folders, and the selected example scenario should run.
 
 The example scenarios lasts 150 years of simulation, and updates the harvest parameter with magic harvest every 70 years; by default, it uses a python script to switch between two rasters of management areas, and two parameter files for the base harvest extension.
 
