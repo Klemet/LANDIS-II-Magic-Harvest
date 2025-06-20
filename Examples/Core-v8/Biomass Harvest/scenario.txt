@@ -21,10 +21,11 @@ CellLength  100 << meters, 100 x 100 m = 1 ha
 
 >> Disturbance Extensions   Initialization File
 >> ----------------------   -------------------
->>   "Base BDA"			base-BDA-input.txt
-   "Biomass Harvest"		biomass-harvest_SetUp_s2e1.txt
-	"Magic Harvest"		magic_harvest.txt
->>   DisturbancesRandomOrder  yes  << optional parameter; default = no
+   "Magic Harvest"          magic_harvest.txt
+   "Biomass Harvest"        biomass-harvest_SetUp_s2e1.txt
+
+DisturbancesRandomOrder  no  
+
 
 
 >> Other Extensions         Initialization File
