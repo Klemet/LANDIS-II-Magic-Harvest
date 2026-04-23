@@ -1,7 +1,7 @@
 ; LANDIS-II Extension infomation
 #define CoreRelease "LANDIS-II-V8"
 #define ExtensionName "Magic harvest"
-#define AppVersion "2.2"
+#define AppVersion "2.3"
 #define AppPublisher "Clément Hardy"
 
 ; Build directory
@@ -47,15 +47,15 @@ Source: {#BuildDir}\Landis.Extension.MagicHarvest.dll; DestDir: {#ExtDir}; Flags
 ; NB. These libraries are used by other extensions and thus are never uninstalled.
 ; These library don't seem to have changed with the passage to Core v8; but I downdloaded the ones from 
 ; https://github.com/LANDIS-II-Foundation/Support-Library-Dlls-v8 anyway, overriding the previous ones.
-Source: {#BuildDir}\Landis.Library.HarvestManagement-v4.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall ignoreversion
-Source: {#BuildDir}\Landis.Utilities.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall ignoreversion
+Source: {#BuildDir}\Landis.Library.HarvestManagement-v5.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall ignoreversion
+Source: {#BuildDir}\Landis.Library.SiteHarvest-v3.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall ignoreversion
 
 ; Complete example for testing the extension
 Source: "..\Examples\Core-v8\Biomass Harvest\*"; DestDir: {#AppDir}\Examples\{#ExtensionName}; Flags: ignoreversion
 
 ; LANDIS-II identifies the extension with the info in this .txt file
 ; NB. New releases must modify the name of this file and the info in it
-#define InfoTxt "Magic harvest v2.2.txt"
+#define InfoTxt "Magic harvest v2.3.txt"
 Source: .\Installation Files\plug-ins-installer-files\{#InfoTxt}; DestDir: {#LandisPlugInDir}
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
