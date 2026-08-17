@@ -1,19 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{63593585-21E3-4CA7-B14D-B786D7E14807}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Landis.Extension.MagicHarvest</RootNamespace>
-    <AssemblyName>Landis.Extension.MagicHarvest</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Deterministic>false</Deterministic>
-    <TargetFrameworkProfile />
     <AssemblyVersion>2.2</AssemblyVersion>
+    <NeutralLanguage>English</NeutralLanguage>
     <RootNamespace>Landis.Extension.MagicHarvest</RootNamespace>
     <AssemblyName>Landis.Extension.MagicHarvest</AssemblyName>
     <AssemblyTitle>Landis.Extension.MagicHarvest</AssemblyTitle>
@@ -23,81 +17,26 @@
     <PackageTags>LANDIS-II;Landis;Extension;Harvest</PackageTags>
     <Authors>Clement Hardy</Authors>
     <Description>Magic Harvest Extension</Description>
-    <Deterministic>false</Deterministic>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="Landis.Core, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Landis.Core.3.0.1\lib\netstandard2.0\Landis.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Landis.Core.Implementation, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Landis.Core.Implementation.3.0.1\lib\netstandard2.0\Landis.Core.Implementation.dll</HintPath>
-    </Reference>
+    <!-- NuGet packages (auto-restored by dotnet). Landis.Core brings
+         Landis.SpatialModeling and Landis.Utilities transitively. -->
+    <PackageReference Include="Landis.Core" Version="3.0.1" />
+    <PackageReference Include="log4net" Version="2.0.14" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Local LANDIS-II extension DLLs in lib/ (fetch via support_libs_download.ps1;
+         HintPaths rewritten by the Docker build scripts to build/extensions) -->
     <Reference Include="Landis.Extension.BiomassHarvest-v7">
-      <HintPath>src\lib\Landis.Extension.BiomassHarvest-v7.dll</HintPath>
-    </Reference>
-    <Reference Include="Landis.Landscapes, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Landis.Landscapes.2.0.1\lib\netstandard2.0\Landis.Landscapes.dll</HintPath>
+      <HintPath>lib\Landis.Extension.BiomassHarvest-v7.dll</HintPath>
     </Reference>
     <Reference Include="Landis.Library.HarvestManagement-v5">
-      <HintPath>src\lib\Landis.Library.HarvestManagement-v5.dll</HintPath>
+      <HintPath>lib\Landis.Library.HarvestManagement-v5.dll</HintPath>
     </Reference>
     <Reference Include="Landis.Library.SiteHarvest-v3">
-      <HintPath>src\lib\Landis.Library.SiteHarvest-v3.dll</HintPath>
+      <HintPath>lib\Landis.Library.SiteHarvest-v3.dll</HintPath>
     </Reference>
-    <Reference Include="Landis.SpatialModeling, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Landis.SpatialModeling.2.0.1\lib\netstandard2.0\Landis.SpatialModeling.dll</HintPath>
-    </Reference>
-    <Reference Include="Landis.Utilities, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Landis.Utilities.2.0.0\lib\netstandard2.0\Landis.Utilities.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net, Version=2.0.14.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>packages\log4net.2.0.14\lib\net45\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
-    <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="src\InputParameters.cs" />
-    <Compile Include="src\InputParametersParser.cs" />
-    <Compile Include="src\PlugIn.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="NuGet.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
